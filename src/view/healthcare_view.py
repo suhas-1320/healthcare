@@ -1,5 +1,5 @@
-from src.model.patient import Patient
 from src.model.doctor import Doctor
+from src.model.patient import Patient
 
 
 class HealthcareView:
@@ -7,9 +7,7 @@ class HealthcareView:
     Handles presentation of healthcare assignments.
     """
 
-    def display_assignments(
-        self, assignments: dict[Patient, Doctor | None]
-    ) -> None:
+    def display_assignments(self, assignments: dict[Patient, Doctor | None]) -> None:
         """
         Displays patient-to-doctor assignments.
 

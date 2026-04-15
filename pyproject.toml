@@ -3,12 +3,20 @@ name = "healthcare"
 version = "0.1.0"
 description = "Healthcare system to map patients to doctors based on disease"
 authors = [
-    { name = "Suhas Kulkarni", email = "suhaskulkarni420@gmail.com" }
+    { name = "Suhas", email = "Suhakulkarni420@gmail.com" }
 ]
 requires-python = ">=3.10"
 
 dependencies = [
-    "faker"
+    "faker>=13.3.3"
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "isort>=5.12.0",
+    "sphinx>=7.0.0"
 ]
 
 [build-system]
@@ -19,11 +27,16 @@ build-backend = "setuptools.build_meta"
 line-length = 88
 target-version = ["py310"]
 
+[tool.isort]
+profile = "black"
+line_length = 88
+
 [tool.flake8]
 max-line-length = 88
 exclude = [
-    ".venv",
+    "healthcareenv",
     "__pycache__",
     "build",
-    "dist"
+    "dist",
+    "docs"
 ]
